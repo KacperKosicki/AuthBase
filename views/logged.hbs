@@ -1,0 +1,20 @@
+<!-- Zaktualizuj szablon w logged.hbs -->
+<section class="index-page">
+  <div class="user-info">
+    {{#if user.photos.[0].value}}
+      <!-- Dodaj awatar użytkownika -->
+      <img src="{{user.photos.[0].value}}" alt="User Avatar" class="avatar">
+    {{else}}
+      <!-- Dodaj domyślne zdjęcie, gdy brak awatara -->
+      <img src="/images/default-avatar.jpg" alt="Default Avatar" class="avatar">
+    {{/if}}
+    <!-- Dodaj komunikat "Hello username!" -->
+    <h2>Hello {{user.displayName}}!</h2>
+    <!-- Dodaj linki do profilu, ustawień profilu i wylogowania -->
+    <p>
+      <a href="/user/profile">Profile</a> | 
+      <a href="/user/profile/settings">Profile Settings</a> | 
+      <a href="/auth/logout">Logout</a>
+    </p>
+  </div>
+</section>
